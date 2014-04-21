@@ -1,12 +1,37 @@
 GITHUBTARBALL
+  remote: boxen/puppet-adobe_reader
+  specs:
+    adobe_reader (1.2.0)
+
+GITHUBTARBALL
+  remote: boxen/puppet-arduino
+  specs:
+    arduino (1.0.1)
+
+GITHUBTARBALL
   remote: boxen/puppet-boxen
   specs:
     boxen (3.4.2)
 
 GITHUBTARBALL
+  remote: boxen/puppet-chrome
+  specs:
+    chrome (1.1.2)
+
+GITHUBTARBALL
   remote: boxen/puppet-dnsmasq
   specs:
     dnsmasq (1.0.1)
+
+GITHUBTARBALL
+  remote: boxen/puppet-dropbox
+  specs:
+    dropbox (1.2.0)
+
+GITHUBTARBALL
+  remote: boxen/puppet-fitbit
+  specs:
+    fitbit (1.0.0)
 
 GITHUBTARBALL
   remote: boxen/puppet-foreman
@@ -29,6 +54,11 @@ GITHUBTARBALL
     go (1.1.0)
 
 GITHUBTARBALL
+  remote: boxen/puppet-googledrive
+  specs:
+    googledrive (1.0.2)
+
+GITHUBTARBALL
   remote: boxen/puppet-homebrew
   specs:
     homebrew (1.6.2)
@@ -37,6 +67,21 @@ GITHUBTARBALL
   remote: boxen/puppet-hub
   specs:
     hub (1.3.0)
+
+GITHUBTARBALL
+  remote: boxen/puppet-iTerm2
+  specs:
+    iTerm2 (1.0.4)
+
+GITHUBTARBALL
+  remote: boxen/puppet-kindle
+  specs:
+    kindle (1.0.1)
+
+GITHUBTARBALL
+  remote: boxen/puppet-mongodb
+  specs:
+    mongodb (1.3.0)
 
 GITHUBTARBALL
   remote: boxen/puppet-nginx
@@ -74,14 +119,54 @@ GITHUBTARBALL
     ruby (7.3.0)
 
 GITHUBTARBALL
+  remote: boxen/puppet-skype
+  specs:
+    skype (1.0.8)
+
+GITHUBTARBALL
+  remote: boxen/puppet-sonos
+  specs:
+    sonos (1.0.3)
+
+GITHUBTARBALL
+  remote: boxen/puppet-spotify
+  specs:
+    spotify (1.0.1)
+
+GITHUBTARBALL
+  remote: boxen/puppet-sublime_text_2
+  specs:
+    sublime_text_2 (1.1.2)
+
+GITHUBTARBALL
   remote: boxen/puppet-sudo
   specs:
     sudo (1.0.0)
 
 GITHUBTARBALL
+  remote: boxen/puppet-vagrant
+  specs:
+    vagrant (3.0.7)
+
+GITHUBTARBALL
+  remote: boxen/puppet-virtualbox
+  specs:
+    virtualbox (1.0.11)
+
+GITHUBTARBALL
+  remote: boxen/puppet-wget
+  specs:
+    wget (1.0.1)
+
+GITHUBTARBALL
   remote: boxen/puppet-xquartz
   specs:
     xquartz (1.1.1)
+
+GITHUBTARBALL
+  remote: elovelan/puppet-lastpass
+  specs:
+    lastpass (1.1.0)
 
 GITHUBTARBALL
   remote: puppetlabs/puppetlabs-inifile
@@ -99,16 +184,26 @@ GITHUBTARBALL
     module-data (0.0.3)
 
 DEPENDENCIES
+  adobe_reader (= 1.2.0)
+  arduino (= 1.0.1)
   boxen (= 3.4.2)
+  chrome (= 1.1.2)
   dnsmasq (= 1.0.1)
+  dropbox (= 1.2.0)
+  fitbit (= 1.0.0)
   foreman (= 1.2.0)
   gcc (= 2.0.100)
   git (= 2.3.0)
   go (= 1.1.0)
+  googledrive (= 1.0.2)
   homebrew (= 1.6.2)
   hub (= 1.3.0)
+  iTerm2 (= 1.0.4)
   inifile (= 1.0.3)
+  kindle (= 1.0.1)
+  lastpass (= 1.1.0)
   module-data (= 0.0.3)
+  mongodb (= 1.3.0)
   nginx (= 1.4.3)
   nodejs (= 3.7.0)
   openssl (= 1.0.0)
@@ -116,7 +211,14 @@ DEPENDENCIES
   pkgconfig (= 1.0.0)
   repository (= 2.3.0)
   ruby (= 7.3.0)
+  skype (= 1.0.8)
+  sonos (= 1.0.3)
+  spotify (= 1.0.1)
   stdlib (= 4.1.0)
+  sublime_text_2 (= 1.1.2)
   sudo (= 1.0.0)
+  vagrant (= 3.0.7)
+  virtualbox (= 1.0.11)
+  wget (= 1.0.1)
   xquartz (= 1.1.1)
 

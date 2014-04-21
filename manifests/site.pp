@@ -64,9 +64,28 @@ node default {
   }
 
   # node versions
-  include nodejs::v0_6
-  include nodejs::v0_8
   include nodejs::v0_10
+
+       include adobe_reader
+        include arduino
+        include chrome
+        include dropbox
+        include fitbit
+        include googledrive
+        include kindle
+        include lastpass
+        include skype
+        include sonos
+        include spotify
+        include sublime_text_2
+        include vagrant
+        vagrant::box { 'wheezy64/virtualbox':
+                source => 'http://puppet-vagrant-boxes.puppetlabs.com/debian-73-x64-virtualbox-puppet.box'
+        }
+
+        include virtualbox
+        include wget
+
 
   # default ruby versions
   ruby::version { '1.9.3': }
