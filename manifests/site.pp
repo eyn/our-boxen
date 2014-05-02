@@ -7,6 +7,7 @@ Exec {
   logoutput   => on_failure,
   user        => $boxen_user,
 
+
   path => [
     "${boxen::config::home}/rbenv/shims",
     "${boxen::config::home}/rbenv/bin",
@@ -79,10 +80,6 @@ node default {
         include spotify
         include sublime_text_2
         include vagrant
-        vagrant::box { 'wheezy64/virtualbox':
-                source => 'http://puppet-vagrant-boxes.puppetlabs.com/debian-73-x64-virtualbox-puppet.box'
-        }
-
         include virtualbox
         include wget
 
