@@ -14,6 +14,31 @@ class people::reducingwip {
 	include sublime_text_2
 	include vagrant
 	include iterm2::stable
+	include virtualbox
+	include wget
+	include packer
+	#include mercurial
+  include bazaar
+  include android_file_transfer
+  include kindle 
+	package { "go":
+    ensure => present
+  }
+
+  package { "mercurial":
+    ensure => present
+  }
+
+  file { "/opt/go":
+    ensure => 'directory'
+  }
+  
+  exec { "gox":
+    environment => ["GOPATH=/opt/go"],
+    command => "go get github.com/mitchellh/gox",
+    creates => "/opt/go/bin/gox",
+    require => [File['/opt/go'], Package["go"]]
+  }
 
 	git::config::global { 'user.name':
   		value  => 'James Moore'
@@ -32,49 +57,15 @@ class people::reducingwip {
 		source => 'http://puppet-vagrant-boxes.puppetlabs.com/ubuntu-1310-x64-virtualbox-puppet.box'
 	}
 
-	include virtualbox
-	include wget
+  ruby::version { '1.9.2': }
 
-	ruby::version { '1.9.2': }
+  ruby_gem { 'rails for v1.9.2':
+    gem    => 'rails',
+    version => "~> 4.0.0",
+    ruby_version => '1.9.2',
+    ensure => present
+  }
 
-	ruby::gem { "bundler for 2.0.0":
-	  gem          => 'bundler',
-	  version      => '~> 1.2.0',
-	  ruby => "2.0.0",
-	}
-
-	ruby::gem { "bundler for 1.9.2":
-	  gem          => 'bundler',
-	  version      => '~> 1.2.0',
-	  ruby => "1.9.2",
-	}
-
-	ruby::local { '/opt/veewee':
-	  version => '1.9.2'
-	}
-
-	file{ "/opt/veewee":
-		ensure => "directory",
-		owner  => "${boxen_user}",
-	    group  => "staff",
-	    mode   => 750,
-	}
-
-	exec { "clone_veewee":
-    	command => "/usr/bin/git clone https://github.com/jedi4ever/veewee.git /opt/veewee",
-    	creates => "/opt/veewee/README.md"
-	}
-
-	file{"/opt/veewee/README.md":
-		mode=>0644,
-		require => Exec["clone_veewee"]
-	}
-	
-	# Run an installed gem
-	exec { '/opt/boxen/rbenv/versions/1.9.2/bin/bundle install':
-	  cwd     => "/opt/veewee",
-	  require => [Ruby::Gem['bundler for 1.9.2'], File['/opt/veewee/README.md']]
-	}
 
 
 

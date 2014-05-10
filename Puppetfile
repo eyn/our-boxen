@@ -29,7 +29,7 @@ end
 # Includes many of our custom types and providers, as well as global
 # config. Required.
 
-github "boxen", "3.4.2"
+github "boxen", "3.6.1"
 
 # Support for default hiera data in modules
 
@@ -42,7 +42,7 @@ github "dnsmasq",     "1.0.1"
 github "foreman",     "1.2.0"
 github "gcc",         "2.0.100"
 github "git",         "2.3.0"
-github "go",          "1.1.0"
+github "go",          "2.0.1"
 github "homebrew",    "1.9.1"
 github "hub",         "1.3.0"
 github "inifile",     "1.0.3", :repo => "puppetlabs/puppetlabs-inifile"
@@ -52,8 +52,8 @@ github "openssl",     "1.0.0"
 github "phantomjs",   "2.3.0"
 github "pkgconfig",   "1.0.0"
 github "repository",  "2.3.0"
-github "ruby",        "7.3.0"
-github "stdlib",      "4.1.0", :repo => "puppetlabs/puppetlabs-stdlib"
+github "ruby",        "8.0.1"
+github "stdlib",      "3.2.1", :repo => "puppetlabs/puppetlabs-stdlib"
 github "sudo",        "1.0.0"
 github "xquartz",     "1.1.1"
 
@@ -77,3 +77,7 @@ github "vagrant",      "3.0.14", :repo => "reducingwip/puppet-vagrant"
 github "virtualbox",   "1.0.11"
 github "wget",         "1.0.1"
 github "packer",       "1.2.1"
+github "mercurial",    "0.0.1", :repo => "bluesalt/puppet-mercurial"
+github "bazaar",       "0.0.1", :repo => "bluesalt/puppet-bazaar"
+github "android_file_transfer", "1.0.3", :repo => "singuerinc/puppet-android_file_transfer"
+github "kindle",       "1.0.1"
