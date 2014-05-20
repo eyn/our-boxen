@@ -21,11 +21,18 @@ class people::reducingwip {
   include bazaar
   include android_file_transfer
   include kindle 
-	package { "go":
+	
+  package { "go":
     ensure => present
   }
 
   package { "mercurial":
+    ensure => present
+  }
+
+  homebrew::tap { 'homebrew/dupes': }
+
+  package {"apple-gcc42":
     ensure => present
   }
 
@@ -57,13 +64,14 @@ class people::reducingwip {
 		source => 'http://puppet-vagrant-boxes.puppetlabs.com/ubuntu-1310-x64-virtualbox-puppet.box'
 	}
 
-  ruby::version { '1.9.2': }
+  file { '/usr/local/bin/gcc-4.2':
+     ensure => 'link',
+     target => '/usr/bin/gcc-4.2',
+  }
 
-  ruby_gem { 'rails for v1.9.2':
-    gem    => 'rails',
-    version => "~> 4.0.0",
-    ruby_version => '1.9.2',
-    ensure => present
+  exec { 'install rails':
+    command => 'gem install rails -f -q',
+    creates => '/usr/bin/rails'
   }
 
 
