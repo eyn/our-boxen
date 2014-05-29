@@ -36,6 +36,10 @@ class people::reducingwip {
     ensure => present
   }
 
+  package {'bash-completion':
+    ensure => present
+  }
+  
   file { "/opt/go":
     ensure => 'directory'
   }
@@ -55,15 +59,6 @@ class people::reducingwip {
   		value  => 'james.moore@cantab.net'
 	}
 
-
-	vagrant::box { 'wheezy64/virtualbox': 
-		source => 'http://puppet-vagrant-boxes.puppetlabs.com/debian-73-x64-virtualbox-puppet.box'
-	}
-
-	vagrant::box {'SaucySalamander/virtualbox':
-		source => 'http://puppet-vagrant-boxes.puppetlabs.com/ubuntu-1310-x64-virtualbox-puppet.box'
-	}
-
   file { '/usr/local/bin/gcc-4.2':
      ensure => 'link',
      target => '/usr/bin/gcc-4.2',
@@ -74,7 +69,10 @@ class people::reducingwip {
     creates => '/usr/bin/rails'
   }
 
-
+  repository { 'package-control':
+    source => 'wbond/sublime_package_control',
+    path   => "/Users/james/Library/Application Support/Sublime Text 2/Packages/Package Control"
+  }
 
 
 
