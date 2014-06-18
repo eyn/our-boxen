@@ -21,7 +21,10 @@ class people::reducingwip {
   include bazaar
   include android_file_transfer
   include kindle 
-	
+	include sublime_text_3
+  include brewcask
+  include evernote
+
   package { "go":
     ensure => present
   }
@@ -40,6 +43,11 @@ class people::reducingwip {
     ensure => present
   }
   
+  package {'todoist':
+    ensure => present,
+    provider => 'brewcask'
+  }
+
   file { "/opt/go":
     ensure => 'directory'
   }
